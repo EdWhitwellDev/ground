@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar.tsx';
-import Stub from './components/Stub.tsx';
 import LiveStream from './components/LiveStream.tsx';
 function App() {
   return (
