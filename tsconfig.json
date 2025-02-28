@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx", // Use 'react-jsx' for React 17+ or 'react' for React 16 and below
+    "target": "es5", // Target ES5 for browser compatibility
+    "lib": ["es6", "dom"],
+    "module": "esnext", // Use ESNext for modern JavaScript modules
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "paths": {
+      "*": ["node_modules/*"]
+
+    },   
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+  },
+  "include": ["src"], // Include your source folder
+  "exclude": ["node_modules"] // Exclude node_modules
+}
