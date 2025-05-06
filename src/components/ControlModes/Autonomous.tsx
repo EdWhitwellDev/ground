@@ -10,7 +10,7 @@ const Model: React.FC<ModelProps> = ({ modelPath }) => {
   return <primitive object={scene} scale={1} />;
 };
 
-const ThreedView: React.FC<{ src: string }> = ({ src }) => {
+const Autonomous: React.FC<{ src: string }> = ({ src }) => {
   return (
     <Canvas style={{ width: "100%", height: "100%" }} camera={{ position: [0, 1, 3] }}>
       <ambientLight intensity={0.5} />
@@ -22,4 +22,4 @@ const ThreedView: React.FC<{ src: string }> = ({ src }) => {
 };
 
 
-export default ThreedView;
+export default Autonomous;
