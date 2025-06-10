@@ -10,7 +10,7 @@ const Standard = () => {
             instruction: buttonId,
             value: inputValue
         };
-        fetch('http://127.0.0.1:8000/standard', {
+        fetch('http://192.168.1.102:8000/standard', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

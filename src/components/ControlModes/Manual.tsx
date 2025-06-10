@@ -21,7 +21,7 @@ const Manual = () => {
             rear_right: rearRightPower,
             duration: duration
         }
-        fetch('http://127.0.0.1:8000/granular', {
+        fetch('http://192.168.1.102:8000/granular', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -33,10 +33,10 @@ const Manual = () => {
           .catch(error => console.error('Error:', error));
     }
     const handleReset = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setFrontLeftPower(0);
-        setRearLeftPower(0);
-        setFrontRightPower(0);
-        setRearRightPower(0);
+        setFrontLeftPower(100);
+        setRearLeftPower(100);
+        setFrontRightPower(100);
+        setRearRightPower(100);
         setDuration(0);
     }
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,22 +61,22 @@ const Manual = () => {
                 <div className="motor_powers">
                     <span>
                         <p style={{fontSize:"20px"}}>FL:</p>
-                        <input id="FL" style={inputStyle} type="number" min="0" max="100" step="1" onChange={(e) => handleInputChange(e)} value={frontLeftPower}/>
+                        <input id="FL" style={inputStyle} type="number" min="-100" max="100" step="1" onChange={(e) => handleInputChange(e)} value={frontLeftPower}/>
                     </span>
                     <span>
                         <p style={{fontSize:"20px"}}>RL:</p>
-                        <input id="RL" style={inputStyle} type="number" min="0" max="100" step="1" onChange={(e) => handleInputChange(e)} value={rearLeftPower}/>
+                        <input id="RL" style={inputStyle} type="number" min="-100" max="100" step="1" onChange={(e) => handleInputChange(e)} value={rearLeftPower}/>
                     </span>
                 </div>
                 <img src="/images/chassis.png" alt="chassis" />
                 <div className="motor_powers">
                     <span>
                         <p style={{fontSize:"20px"}}>FR:</p>
-                        <input id="FR" style={inputStyle} type="number" min="0" max="100" step="1" onChange={(e) => handleInputChange(e)} value={frontRightPower}/>
+                        <input id="FR" style={inputStyle} type="number" min="-100" max="100" step="1" onChange={(e) => handleInputChange(e)} value={frontRightPower}/>
                     </span>
                     <span>
                         <p style={{fontSize:"20px"}}>RR:</p>
-                        <input id="RR" style={inputStyle} type="number" min="0" max="100" step="1" onChange={(e) => handleInputChange(e)} value={rearRightPower}/>
+                        <input id="RR" style={inputStyle} type="number" min="-100" max="100" step="1" onChange={(e) => handleInputChange(e)} value={rearRightPower}/>
                     </span>
                 </div>
             </div>            

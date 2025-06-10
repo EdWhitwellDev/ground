@@ -28,7 +28,7 @@ const Controls = () => {
             </div>
             <div className="view">
                 <div style={{ width: '100%', height: '50%' }}>
-                    <LiveStream src="http://127.0.0.1:8000/video_feed" />
+                    <LiveStream src="http://192.168.1.102:8000/video_feed" />
                 </div>
                 <div style={{ width: '100%', height: '50%' }}>
                     <ThreedView src='terrain.glb'/>
