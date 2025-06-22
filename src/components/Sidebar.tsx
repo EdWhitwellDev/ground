@@ -22,8 +22,8 @@ const Sidebar = () => {
         <div className="menu-item" style={{background:"red", height:"70px", display:"flex", justifyContent:"center"}} onClick={() => window.location.reload()}>
           <p className="sidebar-option-title" style={{color:"white"}}>STOP</p>
         </div>
-        {MenuItem('Mast Cam', 'left', '')}
-        {MenuItem('Engineering', 'eng_cam', 'eng_cam')}
+        {MenuItem('Main Cam', 'main_cam', '')}
+        {MenuItem('Stereo', 'eye', 'stereo')}
         {MenuItem('Model', 'model', 'model')}
         {MenuItem('Controls', 'manual', 'manual')}
       </div>
