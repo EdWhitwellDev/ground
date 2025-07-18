@@ -8,11 +8,13 @@ import Tab from '@mui/material/Tab';
 import Manual from './ControlModes/Manual';
 import Standard from './ControlModes/Standard';
 import Autonomous from './ControlModes/Autonomous';
+import { useGlobalState } from './ContextManager';
 const Controls = () => {
     const [tab, setTab] = useState(0);
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setTab(newValue);
     };
+    const { apiUrl } = useGlobalState();
     return (
         <div className="control_page">
             <div className="control_panel">
@@ -28,7 +30,7 @@ const Controls = () => {
             </div>
             <div className="view">
                 <div style={{ width: '100%', height: '50%' }}>
-                    <LiveStream src="http://192.168.1.102:8000/video_feed" />
+                    <LiveStream src={`${apiUrl}/video_feed`} />
                 </div>
                 <div style={{ width: '100%', height: '50%' }}>
                     <ThreedView src='terrain.glb'/>

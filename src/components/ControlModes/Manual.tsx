@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useGlobalState } from '../ContextManager';  
+
 const inputStyle = {
     height:"50px", 
     fontSize:"30px", 
@@ -13,6 +15,8 @@ const Manual = () => {
     const [rearRightPower, setRearRightPower] = useState(0);
     const [duration, setDuration] = useState(0);
 
+    const { apiUrl } = useGlobalState();
+
     const handleSend = (event: React.MouseEvent<HTMLButtonElement>) => {
         const body = {
             front_left: frontLeftPower,
@@ -21,7 +25,7 @@ const Manual = () => {
             rear_right: rearRightPower,
             duration: duration
         }
-        fetch('http://192.168.1.102:8000/granular', {
+        fetch(`${apiUrl}/granular`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

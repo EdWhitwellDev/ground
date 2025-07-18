@@ -1,5 +1,7 @@
+import { useGlobalState } from '../ContextManager';  
 
 const Standard = () => {
+    const { apiUrl } = useGlobalState();
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         const buttonId = event.currentTarget.id;
@@ -10,7 +12,7 @@ const Standard = () => {
             instruction: buttonId,
             value: inputValue
         };
-        fetch('http://192.168.1.102:8000/standard', {
+        fetch(`${apiUrl}/standard`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

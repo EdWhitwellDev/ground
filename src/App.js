@@ -4,11 +4,14 @@ import StereoFeed from './components/StereoFeed.tsx';
 import LiveStream from './components/LiveStream.tsx';
 import ThreedView from './components/ThreedView.tsx';
 import ManualControls from './components/Controls.tsx';
+import { GlobalStateProvider } from './components/ContextManager.tsx';
 function App() {
+  const apiUrl = 'http://192.168.1.102:8000';
   return (
-    <Router>
-      <div className="container">
-        <Sidebar />
+    <GlobalStateProvider apiUrl={apiUrl}>
+      <Router>
+        <div className="container">
+          <Sidebar />
         <div className="content">
           <Routes>
               <Route exact path="/" element={<LiveStream src="http://192.168.1.102:8000/video_feed" />} />
@@ -19,6 +22,7 @@ function App() {
         </div>
       </div>
     </Router>
+    </GlobalStateProvider>
   );
 }
 
